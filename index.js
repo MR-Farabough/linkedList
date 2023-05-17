@@ -14,8 +14,19 @@ class LinkedList {
         this.head = new Node(data, this.head);
         this.size++;
     }
+    toString() {
+        let current = this.head;
+        let str = '';
+        while (current) {
+            str += `( ${current.data} ) => `;
+            current = current.pointer;
+        }
+        str += 'null'
+        return str
+    }
 }
 
 const ll = new LinkedList();
 ll.insertFirst(100);
 ll.insertFirst(50);
+console.log(ll.toString());

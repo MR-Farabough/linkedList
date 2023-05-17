@@ -12,11 +12,10 @@ class LinkedList {
     }
     insertFirst(data) {
         this.head = new Node(data, this.head);
-        this.size++
+        this.size++;
     }
 }
 
 const ll = new LinkedList();
 ll.insertFirst(100);
-ll.insertFirst(50)
-console.log(ll);
+ll.insertFirst(50);

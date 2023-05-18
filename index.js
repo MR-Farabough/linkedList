@@ -84,6 +84,15 @@ class LinkedList {
         }
         return null;
     }
+    tail() {
+        let current = this.head;
+        while (current) {
+            if (current.pointer == null) {
+                return current
+            }
+            current = current.pointer
+        }
+    };
     toString() {
         let current = this.head;
         let str = '';
@@ -103,3 +112,4 @@ console.log(ll.toString());
 console.log(ll.at(0));
 console.log(ll.contains(500));
 console.log(ll.find(50));
+console.log(ll.tail())

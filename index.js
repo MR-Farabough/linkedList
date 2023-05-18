@@ -17,72 +17,72 @@ class LinkedList {
     insertLast(data) {
         if (data) {
             if (this.size == 0) {
-                return this.insertFirst(data)
+                return this.insertFirst(data);
             } else {
                 let current = this.head;
                 while (current) {
                     if (current.pointer == null) {
-                        this.size++
-                        return current.pointer = new Node(data)
+                        this.size++;
+                        return current.pointer = new Node(data);
                     } else {
                         current = current.pointer;
                     }
                 }
             }
-            this.size++
+            this.size++;
         }
     }
     at(index) {
-        if (index > this.size || index < 0) return null
-        let curIndex = 0
-        let current = this.head
-        let stopper = true
+        if (index > this.size || index < 0) return null;
+        let curIndex = 0;
+        let current = this.head;
+        let stopper = true;
         while (stopper) {
             if (curIndex == index) {
-                stopper = false
-                return current
+                stopper = false;
+                return current;
             } else {
-                current = current.pointer
-                curIndex++
+                current = current.pointer;
+                curIndex++;
             }
         }
     }
     pop() {
-        let current = this.head
+        let current = this.head;
         while (current.pointer) {
             if (current.pointer.pointer == null) {
-                delete current.pointer
-                return
+                delete current.pointer;
+                return;
             } else {
-                current = current.pointer
-                curIndex++
+                current = current.pointer;
+                curIndex++;
             }
         }
     }
     contains(value) {
-        let current = this.head
+        let current = this.head;
         let result;
         while (current.pointer) {
             if (current.data == value) {
-                return result = true
+                return result = true;
             } else {
-                current = current.pointer
+                current = current.pointer;
             }
         }
         return result == true ? true : false
     }
     find(value) {
         let current = this.head;
-        let index = 0
+        let index = 0;
         while (current) {
             if (current.data == value) {
-                return index
+                return index;
             } else {
-                index++
+                index++;
                 current = current.pointer;
             }
         }
-        return null
+        return null;
     }
     toString() {
         let current = this.head;
@@ -91,8 +91,8 @@ class LinkedList {
             str += `( ${current.data} ) => `;
             current = current.pointer;
         }
-        str += 'null'
-        return str
+        str += 'null';
+        return str;
     }
 }
 
@@ -100,6 +100,6 @@ const ll = new LinkedList();
 ll.insertLast(200);
 ll.insertFirst(50);
 console.log(ll.toString());
-console.log(ll.at(0))
-console.log(ll.contains(500))
-console.log(ll.find(50))
+console.log(ll.at(0));
+console.log(ll.contains(500));
+console.log(ll.find(50));

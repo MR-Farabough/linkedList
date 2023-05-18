@@ -59,7 +59,18 @@ class LinkedList {
             }
         }
     }
-    // contains(value) => return true or false
+    contains(value) {
+        let current = this.head
+        let result;
+        while (current.pointer) {
+            if (current.data == value) {
+                return result = true
+            } else {
+                current = current.pointer
+            }
+        }
+        return result == true ? true : false
+    }
     // find(value) => return index of node or null
     // insert at index
     // remove at index
@@ -80,3 +91,4 @@ ll.insertLast(200);
 ll.insertFirst(50);
 console.log(ll.toString());
 console.log(ll.at(0))
+console.log(ll.contains(500))

@@ -84,8 +84,6 @@ class LinkedList {
         }
         return null
     }
-    // insert at index
-    // remove at index
     toString() {
         let current = this.head;
         let str = '';

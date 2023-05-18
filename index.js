@@ -32,7 +32,21 @@ class LinkedList {
             this.size++
         }
     }
-    // at(index) => returns node at index
+    at(index) {
+        if (index > this.size || index < 0) return null
+        let curIndex = 0
+        let current = this.head
+        let stopper = true
+        while (stopper) {
+            if (curIndex == index) {
+                stopper = false
+                return current
+            } else {
+                current = current.pointer
+                curIndex++
+            }
+        }
+    }
     // pop() => remove last item in list
     // contains(value) => return true or false
     // find(value) => return index of node or null
@@ -54,4 +68,4 @@ const ll = new LinkedList();
 ll.insertLast(200);
 ll.insertFirst(50);
 console.log(ll.toString());
-console.log(ll.size)
+console.log(ll.at(0))

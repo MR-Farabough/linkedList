@@ -14,7 +14,24 @@ class LinkedList {
         this.head = new Node(data, this.head);
         this.size++;
     }
-    // insertLast
+    insertLast(data) {
+        if (data) {
+            if (this.size == 0) {
+                return this.insertFirst(data)
+            } else {
+                let current = this.head;
+                while (current) {
+                    if (current.pointer == null) {
+                        this.size++
+                        return current.pointer = new Node(data)
+                    } else {
+                        current = current.pointer;
+                    }
+                }
+            }
+            this.size++
+        }
+    }
     // at(index) => returns node at index
     // pop() => remove last item in list
     // contains(value) => return true or false
@@ -34,7 +51,7 @@ class LinkedList {
 }
 
 const ll = new LinkedList();
-ll.insertFirst(100);
+ll.insertLast(200);
 ll.insertFirst(50);
 console.log(ll.toString());
 console.log(ll.size)

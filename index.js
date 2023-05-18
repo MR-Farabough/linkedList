@@ -47,7 +47,18 @@ class LinkedList {
             }
         }
     }
-    // pop() => remove last item in list
+    pop() {
+        let current = this.head
+        while (current.pointer) {
+            if (current.pointer.pointer == null) {
+                delete current.pointer
+                return
+            } else {
+                current = current.pointer
+                curIndex++
+            }
+        }
+    }
     // contains(value) => return true or false
     // find(value) => return index of node or null
     // insert at index

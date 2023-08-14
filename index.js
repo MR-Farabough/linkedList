@@ -48,28 +48,34 @@ class LinkedList {
         }
     }
     pop() {
-        let current = this.head;
-        while (current.pointer) {
-            if (current.pointer.pointer == null) {
-                delete current.pointer;
-                return;
-            } else {
-                current = current.pointer;
-                curIndex++;
-            }
+        if (this.size === 0) {
+            return;
         }
-    }
+
+        if (this.size === 1) {
+            this.head = null;
+            this.size--;
+            return;
+        }
+         let current = this.head;
+        let previous = null;
+        while (current.pointer) {
+            previous = current;
+            current = current.pointer;
+        }
+        
+        previous.pointer = null;
+        this.size--;
+    } 
     contains(value) {
         let current = this.head;
-        let result;
-        while (current.pointer) {
-            if (current.data == value) {
-                return result = true;
-            } else {
-                current = current.pointer;
+        while (current) {
+            if (current.data === value) {
+                return true;
             }
+            current = current.pointer;
         }
-        return result == true ? true : false
+        return false;
     }
     find(value) {
         let current = this.head;
